@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login </title>
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.4.2/css/all.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="https://mockups.sirv.com/Web/l1.png"
+      type="image/x-icon"
+    />
+  </head>
+
+  <body onload="signInLoad()">
+    <div class="center">
+      <div class="left">
+        <form onsubmit="return false;">
+          <div class="top-form">
+            <div class="logo">
+              <!--img src="favicon.png " alt=""-->
+              <h1>Sign In</h1>
+            </div>
+          </div>
+          <div class="center-form">
+            <div class="input-con">
+              <i class="fa-solid fa-envelope"></i>
+              <input id="email" type="email" placeholder="Email" required />
+            </div>
+            <div class="input-con">
+              <i class="fa-solid fa-lock-keyhole"></i>
+              <input
+                id="password"
+                type="password"
+                placeholder="Password"
+                required
+              />
+            </div>
+          </div>
+          <div class="bottom-form">
+            <button onclick="signInToSite()" class="active">SIGN IN</button>
+            <button onclick="goSignUpPage()" s class="deactive"
+              >Don't have an account yet ?</button
+            >
+          </div>
+        </form>
+      </div>
+      <div class="right">
+        <img src="https://mockups.sirv.com/Web/icon2.png" alt="" />
+      </div>
+    </div>
+    <script>
+      function goSignUpPage() {
+        window.location.href = "sign-up.html";
+      }
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1"
+    />
+    <title>Product Details</title>
+    <link
+      rel="shortcut icon"
+      href="https://mockups.sirv.com/Web/pd.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/mobirise2.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href="../css/jarallax.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/style1.css" />
+    <link rel="stylesheet" href="../css/pro.css" />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;700&display=swap&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;700&display=swap&display=swap"
+      />
+    </noscript>
+    <link rel="stylesheet" href="../css/mbr-additional.css" type="text/css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-y: scroll;
+      }
+
+      body::-webkit-scrollbar {
+        width: 0;
+      }
+
+      .cart-container {
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: white;
+        width: 100%;
+        max-width: 420px;
+        height: 100%;
+        z-index: 1000;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        overflow-y: auto;
+        border-top: 15px solid white;
+      }
+
+      .cart-container.show {
+        transform: translateX(0);
+      }
+
+      .cart-content {
+        padding: 20px;
+        max-height: calc(100vh - 85px);
+        overflow-y: auto;
+      }
+
+      .cart-close {
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 36px;
+        color: black;
+      }
+
+      .cart-items {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .checkout-box {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #f2f2f2;
+        padding: 15px;
+        box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.3);
+        z-index: 999;
+      }
+
+      .checkout-button {
+        width: 100%;
+        padding: 15px 20px;
+        background-color: #000000;
+        color: white;
+        border: none;
+        border-radius: 35px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .checkout-button:hover {
+        background-color: #45a049;
+      }
+
+      @media (max-width: 768px) {
+        .cart-container {
+          width: 100vw;
+          max-width: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyBz4hyqPgjKjhTE_OxPdcevi0lDts7ts_Y",
+        authDomain: "doppelganger-in.firebaseapp.com",
+        databaseURL: "https://doppelganger-in-default-rtdb.firebaseio.com",
+        projectId: "doppelganger-in",
+        storageBucket: "doppelganger-in.appspot.com",
+        messagingSenderId: "861774340022",
+        appId: "1:861774340022:web:b84930f0e8b8e310d2ab17",
+        measurementId: "G-TP2JBZQJKS",
+      };
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+      const auth = firebase.auth();
+
+      function signOutUserAccount() {
+        auth
+          .signOut()
+          .then(() => {
+            window.location.href = "../login/sign-in.html";
+          })
+          .catch((error) => {
+            console.error("Sign-out error:", error);
+          });
+      }
+    </script>
+
+    <section
+      data-bs-version="5.1"
+      class="menu menu2 cid-uaMC4xmBXW"
+      once="menu"
+      id="menu-5-uaMC4xmBXW"
+    >
+      <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+        <div class="container">
+          <div class="navbar-brand">
+            <span class="navbar-logo">
+              <a href="../../index.html">
+                <img
+                  src="https://mockups.sirv.com/Web/icon.jpg"
+                  alt="Mobirise Website Builder"
+                  style="height: 4.3rem"
+                />
+              </a>
+            </span>
+            <span class="navbar-caption-wrap">
+              <a class="navbar-caption text-black display-4">DoppelGanger</a>
+            </span>
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-bs-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <div class="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+              <li class="nav-item">
+                <a
+                  class="nav-link link text-black display-4"
+                  href="../../index.html"
+                  ><i class="fa fa-home"></i>&nbsp; Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link link text-black display-4"
+                  href="../login/sign-in.html"
+                  aria-expanded="false"
+                  ><i class="fa-solid fa-bag-shopping"></i>&nbsp; Shop</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link link text-black display-4"
+                  href="../info/contact.html"
+                  style="margin-right: 60px !important"
+                  ><i class="fa-solid fa-envelope-open-text"></i>&nbsp;
+                  Contact</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link link text-black display-4"
+                  href="../login/sign-in.html"
+                  ><i class="fas fa-user-circle"></i> &nbsp; Login</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link link text-black display-4"
+                  href="#"
+                  id="toggleCart"
+                >
+                  <i class="fas fa-shopping-cart"></i>&nbsp; Cart
+                  <span id="cartItemCount" class="badge badge-pill badge-danger"
+                    >0</span
+                  >
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link link text-black display-4"
+                  onclick="signOutUserAccount()"
+                  ><i class="fas fa-sign-out-alt"></i>&nbsp; Logout</a
+                >
+              </li>
+            </ul>
+            <div class="navbar-buttons mbr-section-btn">
+              <a class="btn btn-primary display-4" href="../3D/19b.html"
+                >3D View</a
+              >
+            </div>
+          </div>
+        </div>
+      </nav>
+    </section>
+
+    <div class="cart-container">
+      <div class="cart-content">
+        <span class="cart-close">&times;</span>
+        <h3
+          id="cartTitle"
+          style="padding-bottom: 20px; font-weight: bold; display: none"
+          >Your Cart</h3
+        >
+        <h3
+          id="emptyCartMessage"
+          style="
+            padding-top: 70px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            display: none;
+            margin-bottom: 40px;
+          "
+          >Your cart is empty!</h3
+        >
+        <button
+          id="shopNowButton"
+          class="btn btn-primary"
+          style="
+            width: 70%;
+            padding: 10px 15px;
+            background-color: #000000;
+            color: white;
+            border: none;
+            border-radius: 35px;
+            cursor: pointer;
+            display: none;
+            font-size: 14px;
+            margin: 0 auto;
+            display: block;
+          "
+          onclick="navigateToPage()"
+        >
+          Continue Shopping
+        </button>
+
+        <script>
+          function navigateToPage() {
+            window.location.href = "../products/product.html";
+          }
+        </script>
+        <ul class="cart-items"></ul>
+        <div class="payment-summary-box" style="display: none">
+          <h5 style="padding-bottom: 10px; font-weight: bold"
+            >Payment Summary</h5
+          >
+          <div class="payment-summary">
+            <div class="payment-row">
+              <span class="payment-label">Subtotal</span>
+              <span class="payment-amount" id="subtotalAmount"
+                >&#x20B9; 0.00</span
+              >
+            </div>
+            <div class="payment-row">
+              <span class="payment-label">Shipping</span>
+              <span class="payment-amount" id="shippingAmount">FREE</span>
+            </div>
+            <hr />
+            <div id="shippingMessage" class="shipping-message"></div>
+            <div class="payment-row">
+              <span class="payment-label total-label">TOTAL</span>
+              <span class="payment-amount total-amount" id="totalAmount"
+                >&#x20B9; 0.00</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="checkout-box">
+        <button
+          class="checkout-button"
+          style="display: none"
+          onclick="window.location.href='../Payment/pay.html'"
+          >Checkout</button
+        >
+      </div>
+    </div>
+    <br />
+    <div class="container-fluid">
+      <br /><br /><br />
+      <div class="cart">
+        <div class="row row1">
+          <div class="col-md-4">
+            <img
+              src="https://mockups.sirv.com/Tees/19b.jpg"
+              width="100%"
+              id="ProductImg"
+            />
+            <div class="small-imgs">
+              <img
+                src="https://mockups.sirv.com/Tees/16a.jpg"
+                width="100%"
+                class="small-img"
+              />
+              <img
+                src="https://mockups.sirv.com/Tees/19b.jpg"
+                width="100%"
+                class="small-img"
+              />
+              <img
+                src="https://mockups.sirv.com/Tees/19c.jpg"
+                width="100%"
+                class="small-img"
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h1 class="product-title">Gedo Mazo</h1>
+            <div class="reviews">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <p>406 reviews</p>
+            </div>
+            <div class="price">
+              <span>&#x20B9; 1250.00</span>
+              <span>&#x20B9; 1999.00</span>
+            </div>
+            <div class="row">
+              <div class="col-md-4 qty">
+                <h5>Quantity</h5>
+                <select class="quantity custom-select">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10</option>
+                </select>
+              </div>
+            </div>
+            <div id="product" class="product-inf">
+              <ul>
+                <li class="active"
+                  ><a href="#Description">Product Description</a></li
+                >
+                <li><a href="#Details">Product Details</a></li>
+              </ul>
+              <div class="tabs-content">
+                <div id="Description">
+                  <p>
+                    This design features the Gedo Mazo statue alongside the
+                    Akatsuki symbol. It highlights the statue's role as a key
+                    tool in the Akatsuki's plan to revive the Ten-Tails.</p
+                  >
+                </div>
+                <div id="Details">
+                  <p
+                    >Luxuriously material blend for ultimate comfort. Features a
+                    vibrant, high-quality graphic that will stay sharp wash
+                    after wash. Relaxed fit with dropped shoulder, available in
+                    One Size Fits Most.</p
+                  >
+                  <p>Machine wash cold, tumble dry low.</p>
+                </div>
+              </div>
+            </div>
+            <div class="buttons">
+              <div class="row">
+                <div class="col-md-6">
+                  <a href="#" class="custom-btn add-to-cart"
+                    >Add To Cart <i class="fas fa-angle-right"></i
+                  ></a>
+                </div>
+                <div class="col-md-6">
+                  <a href="../Payment/pay.html" class="custom-btn buy-now"
+                    >Buy Now <i class="fas fa-angle-right"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="../formoid/pr.js"></script>
+    <script src="../formoid/pr.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#toggleCart").click(function () {
+          $(".cart-container").toggleClass("show");
+        });
+
+        $(".cart-close").click(function () {
+          $(".cart-container").removeClass("show");
+        });
+
+        $(".add-to-cart").click(function (e) {
+          e.preventDefault();
+          const productTitle = $(".product-title").text();
+          const price = $(".price span:first").text().replace("₹", "").trim();
+          const quantity = $(".quantity").val();
+          const total = price * quantity;
+
+          db.collection("cartItems")
+            .add({
+              title: productTitle,
+              price: parseFloat(price),
+              quantity: parseInt(quantity),
+              total: total,
+              timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+            })
+            .then((docRef) => {
+              console.log("Document written with ID: ", docRef.id);
+              updateCartCount();
+              alert("Product added to cart!");
+            })
+            .catch((error) => {
+              console.error("Error adding document: ", error);
+            });
+        });
+
+        updateCartCount();
+      });
+
+      function signOutUserAccount() {
+        auth
+          .signOut()
+          .then(() => {
+            window.location.href = "../login/sign-in.html";
+          })
+          .catch((error) => {
+            console.error("Sign-out error:", error);
+          });
+      }
+    </script>
+    <section
+      data-bs-version="5.1"
+      class="footer4 cid-uaMC4xwRVX"
+      once="footers"
+      id="footer-4-uaMC4xwRVX"
+    >
+      <div class="container">
+        <div class="media-container-row align-center mbr-white">
+          <div class="col-12">
+            <p class="mbr-text mb-0 mbr-fonts-style display-7"
+              >© 2024 Doppelganger. All Rights Reserved.</p
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <script
+      src="https://kit.fontawesome.com/9856c5de78.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="../web/assets/jquery/jquery.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../parallax/jarallax.js"></script>
+    <script src="../smoothscroll/smooth-scroll.js"></script>
+    <script src="../ytplayer/index.js"></script>
+    <script src="../dropdown/js/navbar-dropdown.js"></script>
+    <script src="../vimeoplayer/player.js"></script>
+    <script src="../theme/js/script.js"></script>
+    <script src="../formoid/formoid.min.js"></script>
+  </body>
+</html>

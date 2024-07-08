@@ -1,0 +1,420 @@
+@import url("https://rsms.me/inter/inter.css");
+
+:root {
+  --color-gray: #262627;
+  --color-lighter-gray: #e3e5ed;
+  --color-light-gray: #f7f7fa;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+p {
+  color: var(--color-gray);
+}
+
+hr {
+  height: 1px;
+  width: 100%;
+  background-color: var(--color-light-gray);
+  border: 0;
+  margin: 10px 0;
+}
+
+.container {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.form {
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--color-lighter-gray);
+  padding: .5rem;
+  border-radius: .25rem;
+}
+
+.field__label {
+  color: var(--color-gray);
+  font-size: 0.75rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem
+}
+
+
+
+.field__input {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  font-weight: bold;
+  font-size: 1rem;
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+}
+
+
+
+/* *************************************************** */
+.containerxx {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+.fieldxx {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--color-lighter-gray);
+  padding: .5rem;
+  border-radius: .25rem;
+}
+
+.field__inputxx {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  font-weight: bold;
+  font-size: 1rem;
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+}
+
+.field__labelxx {
+  color: var(--color-gray);
+  font-size: 0.75rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem
+}
+
+/* ******************************************************* */
+
+.field:focus-within {
+  border-color: #000;
+}
+
+.fields {
+  display: grid;
+  grid-gap: 1rem;
+}
+.fields--2 {
+  grid-template-columns: 1fr 1fr;
+}
+.fields--3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.button {
+  background-color: #000;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: block;
+  color: #fff;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+}
+.button:focus-visible {
+  background-color: #333;
+}
+
+/* Modal styles */
+.open-modal-button {
+  background-color: #000;
+  color: #fff;
+  padding: 1rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 2rem;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 0 auto;
+  padding: 20px; /* Increased padding */
+  border: 1px solid #888;
+  max-width: 800px; /* Adjusted max-width */
+  border-radius: 10px;
+  position: fixed; /* Changed to fixed positioning */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Center the modal */
+  width: 90%; /* Updated width for responsiveness */
+  width: 1000; /* Adjusted width */
+  height: 500px; /* Adjusted height */
+  overflow-y: auto; /* Add overflow-y for scrolling on small screens */
+}
+
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Status Indicator Styles */
+.status-indicator {
+  float: right;
+  font-weight: bold;
+  margin-right: 20px;
+  margin-top: 20px;
+  color: var(--color-gray);
+  font-size: 1.2rem;
+}
+.status-indicator.green {
+  color: green;
+}
+
+/* Headings section */
+.section-headings {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding:12px;
+  background-color:#f0f0f0; /*grey*/
+border-radius: 20px;
+}
+
+.heading {
+  flex: 1;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Payment Box Styles */
+#payment-section-container .payment-box {
+  flex: 0 0 calc(50% - 20px); /* Take up 48% of the container's width with some margin */
+  padding: 20px; /* Reduced padding for a cleaner look */
+  margin: 10px 1%; /* Add some margin for spacing */
+  background-color: #333; /* Darker background color for better contrast */
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex; /* Make the container flex */
+  align-items: center; /* Center align items vertically */
+  justify-content: center; /* Center align items horizontally */
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+#payment-section-container .payment-box:hover {
+  background-color: #444; /* Darken background color on hover */
+}
+
+#payment-section-container .payment-box span {
+  margin-right: 10px; /* Reduced spacing between text and image */
+}
+
+#payment-section-container .payment-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#payment-section-container .payment-box img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-left: auto; /* Align the image to the right */
+  background-color: white;
+  padding: 3px;
+}
+
+.btn {
+  position: absolute;
+  bottom: -73px; /* Adjust the distance from the bottom as needed */
+  left: 10%; /* Adjust left position if needed */
+  right: 10%; /* Adjust right position if needed */
+  background-color: #000;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 25px;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+  width: 50%; /* Adjust button width from both sides */
+  margin: 0 auto; /* Center the button horizontally */
+}
+
+
+
+
+
+
+
+/* Media query for small screens (up to 600px) */
+@media screen and (max-width: 400px) {
+  /* Adjust modal content */
+  /* .modal-content {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+  } */
+
+  /* Adjust headings */
+  .heading {
+    font-size: 0.7em;
+  }
+
+  /* Keep input box at full size */
+  .field__input {
+    width: 100wh;
+    height: 5px; /* Set a minimum height */
+    font-size: 12px; /* Adjust font size if needed */
+    padding: 10px; /* Add padding for better touch usability */
+    box-sizing: border-box; /* Include padding in the width calculation */
+    margin-left: -6px;
+    
+  }
+
+  /* Adjust button width */
+  .button {
+    width: 80%;
+  }
+
+  .field__label {
+    color: var(--color-gray);
+    font-size: 0.6rem;
+    font-weight: 10;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+  }
+  
+
+  .field__inputxx {
+    width: 100%; /* Set a smaller width */
+    height: 30px; /* Set a smaller height */
+    font-size: 14px !important; /* Adjust font size and use !important to override inline styles */
+    padding: 2px; /* Adjust padding */
+    box-sizing: border-box; /* Include padding in the width calculation */
+    padding-left: -20px;
+  }
+  
+  .field__labelxx {
+    color: var(--color-gray);
+    font-size: 0.5rem;
+    font-weight: 100;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem
+  }
+  
+  .fieldxx {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--color-lighter-gray);
+    padding: .5rem;
+    border-radius: .25rem;
+  }
+
+
+  .modal-content {
+    /* Other styles */
+    overflow: hidden; /* Prevent scrolling for the entire modal */
+  }
+
+  #address-section {
+    overflow-y: auto; /* Enable scrolling only for the address section */
+    max-height: 100vh; /* Adjust the maximum height as needed */
+  }
+  
+
+
+
+
+
+  .container {
+    max-width: 60rem;
+    margin: 0 auto;
+  }
+  
+  #payment-section-container .payment-section {
+    flex-direction: column; /* Stack payment boxes vertically */
+    align-items: center; /* Center align items horizontally */
+  }
+
+  #payment-section-container .payment-box {
+    width: 100%; /* Full width for small screens */
+    height: auto; /* Auto height for small screens */
+    margin-bottom: 10px; /* Space between stacked items */
+    justify-content: flex-start; /* Keep image and text aligned to the left */
+  }
+
+  #payment-section-container .payment-box img {
+    margin-left: -70; /* Remove left margin */
+    margin-right: 10px; /* Space between image and text */
+  }
+
+  #payment-section-container .payment-box span {
+    margin-left: 0; /* Remove left margin */
+  }
+
+}
+

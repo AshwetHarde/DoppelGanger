@@ -1,0 +1,156 @@
+/* Global styles */
+body {
+  margin-top: 8.3%; /* Default margin-top for larger screens */
+}
+
+/* Small screens */
+@media screen and (max-width: 767px) {
+  body {
+    margin-top: 20%; /* Adjusted margin-top for smaller screens */
+  }
+}
+
+/* Additional styles from your provided CSS */
+iframe {
+  margin-top: -7.6%;
+  width: 95%;
+}
+
+:root {
+  --lightblue: #ffffff;
+  --red: #000000;
+}
+
+a,
+a:hover {
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.bg-lightblue {
+  background: var(--lightblue) !important;
+}
+
+.bg-red {
+  background: var(--red) !important;
+}
+
+.text-red {
+  color: var(--red);
+}
+
+.container-fluid-max {
+  max-width: 1440px;
+}
+
+.cover {
+  background: no-repeat center/cover;
+}
+
+.p-15 {
+  padding: 15px;
+}
+
+.scroll .page-header {
+  background: var(--red) !important;
+}
+
+.scroll .hero {
+  transform: scale(0.98);
+}
+
+.page-header {
+  transition: background 0.5s ease-in-out !important;
+}
+
+.page-header .navbar {
+  padding: 1rem 0;
+}
+
+.page-header .navbar-toggler {
+  border-color: var(--white); 
+}
+
+.hero {
+  background-attachment: fixed;
+  transition: transform 0.5s ease-in-out;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.5) 0,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.1) 100%
+  ) !important;
+}
+
+.hero .container-fluid {
+  z-index: 10;
+}
+
+.popular-destinations figure {
+  margin-bottom: 30px;
+}
+
+.popular-destinations figcaption {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3) !important;
+}
+
+.popular-destinations img {
+  filter: grayscale(100%) blur(3px);
+  transition: transform 0.5s, filter 0.75s;
+}
+
+.popular-destinations a:hover img {
+  transform: scale(1.25);
+  filter: none;
+}
+
+.row {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.col {
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block !important;
+}
+
+.page-footer .footer-links {
+  text-align: right;
+}
+
+/* Media queries */
+@media screen and (max-width: 991px) {
+  .page-header {
+    background: var(--red) !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .page-footer .footer-child {
+    text-align: center;
+  }
+}
+
+.new-launch-title {
+  color: #000000;
+}
